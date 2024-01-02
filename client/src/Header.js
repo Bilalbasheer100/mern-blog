@@ -5,7 +5,7 @@ import {UserContext} from "./UserContext";
 export default function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('https://mern-blog-frontend-seven-zeta.vercel.app/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -15,7 +15,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('https://mern-blog-frontend-seven-zeta.vercel.app/logout', {
       credentials: 'include',
       method: 'POST',
     });
@@ -30,7 +30,7 @@ export default function Header() {
       <nav>
         {username && (
           <>
-            <Link to="/create">Create new post</Link>
+            <Link to="/create">Create New Post</Link>
             <a onClick={logout}>Logout ({username})</a>
           </>
         )}
