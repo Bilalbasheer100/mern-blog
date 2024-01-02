@@ -49,7 +49,7 @@ app.post('/login', async (req,res) => {
       });
     });
   } else {
-    res.status(400).json('wrong credentials');
+    res.status(400).json('wrong Credentials');
   }
 });
 
